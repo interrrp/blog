@@ -46,7 +46,7 @@ posts = set[Post]()
 
 for post_file in POSTS_DIR.glob("*.md"):
     slug = post_file.stem
-    _, frontmatter, markdown, *_ = post_file.read_text().split("---")
+    _, frontmatter, markdown, *_ = post_file.read_text().split("+++")
 
     frontmatter = cast("dict[str, str]", tomllib.loads(frontmatter))
 
