@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$title</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: 0;
+      }
+
+      body {
+        font-family: "Times New Roman", Times, serif;
+        line-height: 1;
+
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .entries {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      h1,
+      h2 {
+        margin: 1rem 0;
+      }
+
+      main {
+        line-height: 1.5;
+      }
+
+      time {
+        opacity: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/">Back to index</a>
+      <h1>$title</h1>
+      <time>$created_at</time>
+    </header>
+    <main>$html</main>
+  </body>
+</html>
