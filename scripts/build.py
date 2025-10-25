@@ -7,6 +7,7 @@
 
 from dataclasses import asdict, dataclass
 from pathlib import Path
+from shutil import rmtree
 from string import Template
 from typing import cast
 
@@ -18,6 +19,12 @@ POSTS_DIR = Path("posts")
 BUILD_DIR = Path("build")
 
 BUILD_DIR.mkdir(exist_ok=True)
+
+for item in BUILD_DIR.iterdir():
+    if item.is_dir():
+        rmtree(item)
+    else:
+        item.unlink()
 
 
 def build(filename: str, content: str) -> None:
