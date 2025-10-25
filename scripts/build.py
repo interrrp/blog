@@ -5,7 +5,6 @@
 # ]
 # ///
 
-import logging
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from string import Template
@@ -13,14 +12,6 @@ from typing import cast
 
 import mistletoe
 import tomllib
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(levelname)s %(message)s",
-)
-
-logger = logging.getLogger(__name__)
-
 
 TEMPLATES_DIR = Path("templates")
 POSTS_DIR = Path("posts")
@@ -31,7 +22,7 @@ BUILD_DIR.mkdir(exist_ok=True)
 
 def build(filename: str, content: str) -> None:
     path = BUILD_DIR / filename
-    logger.info("%s", path)
+    print(path)
     _ = path.write_text(content)
 
 
