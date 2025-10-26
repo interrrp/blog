@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.5;
+
+  max-width: 50rem;
+  margin: 0 auto;
+
+  padding: 2rem 1rem;
+}
+
+h1 {
+  line-height: 1.1;
+  margin: 0.5rem 0;
+}
+
+time {
+  color: hsl(0 0% 40%);
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  margin-bottom: 2rem;
+}

@@ -73,12 +73,12 @@ def read_template(name: str) -> Template:
 
 
 index_template = read_template("index")
-post_entry_template = read_template("post-entry")
+entry_template = read_template("entry")
 post_template = read_template("post")
 
 entries = ""
 for post in posts:
-    entries += post_entry_template.substitute(asdict(post))
+    entries += entry_template.substitute(asdict(post))
 
 index_html = index_template.substitute(entries=entries)
 build("index.html", index_html)
