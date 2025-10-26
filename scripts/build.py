@@ -7,7 +7,7 @@
 
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from shutil import rmtree
+from shutil import copytree, rmtree
 from string import Template
 from typing import cast
 
@@ -16,6 +16,7 @@ import tomllib
 
 TEMPLATES_DIR = Path("templates")
 POSTS_DIR = Path("posts")
+STATIC_DIR = Path("static")
 BUILD_DIR = Path("build")
 
 BUILD_DIR.mkdir(exist_ok=True)
@@ -31,6 +32,10 @@ def build(filename: str, content: str) -> None:
     path = BUILD_DIR / filename
     print(path)
     _ = path.write_text(content)
+
+
+_ = copytree(STATIC_DIR, BUILD_DIR / "static", dirs_exist_ok=True)
+print("static")
 
 
 @dataclass(frozen=True)
