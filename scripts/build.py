@@ -47,7 +47,7 @@ class Post:
     html: str
 
 
-posts = set[Post]()
+posts = list[Post]()
 
 for post_file in POSTS_DIR.glob("*.md"):
     slug = post_file.stem
@@ -64,7 +64,9 @@ for post_file in POSTS_DIR.glob("*.md"):
         frontmatter["preview"],
         html,
     )
-    posts.add(post)
+    posts.append(post)
+
+posts.reverse()
 
 
 def read_template(name: str) -> Template:
